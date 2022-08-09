@@ -2,18 +2,18 @@ dotfiles for my current (WIP) setup
 
 # Information
 
-Distro: debian (bookworm)
+   - **Distro:** [debian](https://debian.org/) (bookworm)
 
-Window manager: bspwm
+   - **Window Manager:** [bspwm](https://github.com/baskerville/bspwm)
 
-Panel: eww
+   - **Panel:** [eww](https://github.com/elkowar/eww)
 
-Terminal: kitty
+   - **Terminal:** [kitty](https://github.com/kovidgoyal/kitty)
 
-App launcher: rofi
+   - **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
 
-Editor: neovim / vscode
+   - **Editor:** [neovim](https://github.com/neovim/neovim) / [vscodium](https://github.com/VSCodium/vscodium/)
 
-Shell: fish
+   - **Composite manager:** [picom-yaocccc](https://github.com/yaocccc/picom/)
 
-Composite manager: picom-yaocccc
+   - **Notification Daemon:** [dunst](https://github.com/dunst-project/dunst)
