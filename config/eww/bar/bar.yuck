@@ -1,0 +1,99 @@
+; LEFT
+
+(defwidget workspaces []
+  (literal :content workspace)
+)
+
+; CENTER
+(defwidget wintitle []
+  (label :text get-title :class "wintitle")
+)
+
+; RIGHT
+(defwidget mem-used []
+  (box
+    :class "mem-used--container"
+    :space-evenly "false"
+    (label
+      :class "mem-used--icon"
+      :text ""
+    )
+    (label
+      :class "mem-used--text"
+      :text mem-used
+    )
+  )
+)
+
+
+(defwidget net-download []
+  (box
+    :class "net-download--container"
+    :space-evenly "false"
+    (label
+      :class "net-download--icon"
+      :text ""
+    )
+    (label
+      :class "net-download--text"
+      :text net-download
+      ; :text "0 B/s"
+    )
+  )
+)
+
+
+(defwidget wifi []
+  (box :class "wifi--icon"
+    :orientation "h"
+    :space-evenly "false"
+    (button
+      :class "network ${network_class}"
+      :tooltip "${network_name} (Press to open nmtui)"
+      :onclick "kitty -T network -e nmtui"
+      network_icon
+    )
+  )
+)
+
+
+(defwidget bat[]
+  (box
+    :class "bat-container"
+    :space-evenly "false"
+    (label
+      :halign "start"
+      :class "bat-icon"
+      :text {
+      bat-state == "Charging" ? "懲" :
+      bat-cap <= 10 ? "鶴" :
+      bat-cap <= 30 ? "﨩" :
+      bat-cap <= 60 ? "飯" :
+      bat-cap <= 80 ? "飼" :
+      bat-cap <= 100 ? "館" : "?"
+      }
+    )
+    (label
+      :class "bat-text"
+      :halign "center"
+      :space-evenly "false"
+      :text "${EWW_BATTERY["BAT1"].capacity} %"
+    )
+  )
+)
+
+
+(defwidget sep []
+  (label :class "sep" :text "")
+  ; old-icon: 
+)
+
+
+(defwidget datebox []
+  (box
+    :orientation "h"
+    :class "date-box"
+    :space-evenly "false"
+    (label :text get-date :class "content")
+  )
+)

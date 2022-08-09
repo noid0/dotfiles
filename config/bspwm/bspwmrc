@@ -1,0 +1,42 @@
+#! /bin/bash
+
+#restore wallpaper
+feh --no-fehbg --bg-fill --randomize "$HOME/Pictures/wallpaper-bspwm/"
+
+#keyboard daemon
+pgrep -x sxhkd > /dev/null || DISPLAY=:0 sxhkd || DISPLAY=:1 sxhkd || /usr/bin/sxhkd & 
+
+#assign workspaces
+bspc monitor -d  ws1 ws2 ws3 ws4 ws5 ws6
+
+#gaps between windows TASK: DIFF BETWEEN THESE TWO RULES
+bspc config window_gap 2
+bspc config border_width 0
+
+#enable cursor
+xsetroot -cursor_name left_ptr &
+
+#kill if running
+killall -9 picom picom-unstable sxhkd dunst \
+copyq flameshot playerctld touchegg ksuperkey \
+pavucontrol jgmenu bat-low-notify
+
+#polkit agent
+if [[ ! $(pidof xfce-polkit) ]]; then
+  /usr/libexec/xfce-polkit &
+fi
+
+#autostart services
+eval "$HOME"/.config/bspwm/autostart.sh &
+
+#start copyq and flameshot
+copyq --start-server & 
+# flameshot & 
+
+#touchegg & 
+
+#compositor
+while pgrep -u $UID -x picom-unstable >/dev/null; do sleep 1; done
+picom-unstable &
+
+dunstify -i window_list "BSPWM restarted"

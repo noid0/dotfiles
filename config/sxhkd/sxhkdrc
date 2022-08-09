@@ -1,0 +1,181 @@
+#get keynames with xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
+
+super + d
+  killall dunst; notify-send "title" "body here"
+
+#
+# wm independent hotkeys
+#
+
+#reload sxhkd config
+super + Escape
+  pkill -USR1 -x sxhkd && dunstify --replace=69 -i keyboard "Restarted SXHKD"
+
+
+# Launch Terminal
+super + Return 
+  kitty
+
+# Launch Menus
+super + m
+	exec rofi -drun-use-desktop-cache -show drun
+
+#resize top for fullscreen
+#super + k
+  	#bspc config top_padding 41 > /dev/null
+#super + o 
+	#bspc config top_padding 0 > /dev/null
+
+super + k
+	toggle-eww-bar
+
+#fullsceen toggle
+super + f
+	bspc node -t \~fullscreen
+
+
+#lock screen
+super + l
+  betterlockscreen -l
+
+# Launch chrome
+super + w
+  notify-send 'launching chrome'; google-chrome 
+
+# Randomize wallpaper
+# super + shift + w
+#   {feh --no-fehbg --bg-fill --randomize "$HOME/Pictures/Wallpapers/"}
+
+#volume controls
+XF86Audio{RaiseVolume,LowerVolume}
+  notify-volume {up,down}
+#pactl set-sink-volume 0 {+2%,-2%}
+
+XF86AudioMute
+  notify-volume mute
+#pactl set-sink-mute 0 toggle
+
+#play pause stuff
+XF86AudioPlay
+	playerctl {play, pause}
+
+XF86AudioPrev
+	playerctl previous
+
+XF86AudioNext
+	playerctl next
+
+#brightness controls
+XF86MonBrightness{Up,Down}
+  notify-brightness {up,down}
+#brightnessctl s 10{+,-}
+
+#screenshot gui
+Print
+  flameshot gui
+
+super + c
+  xcolor-pick
+
+#screenshot window
+#ctrl + Print
+#  win-shot
+
+#delayed screenshot
+#ctrl + shift + Print
+#  shot-delay
+
+#
+# BSPWM HOTKEYS
+#
+
+
+super + {_,shift + }{1-6}
+      bspc {desktop -f,node -d} '^{1-9}' #--follow
+
+# Quit/Restart bspwm
+super + shift + {q,r}
+  bspc {quit,wm -r}
+
+# Close and kill
+super + {q,Delete}
+  {xdo close,xdo close}
+
+# Alternate between the tiled and monocle layout
+super + space
+  bspc node -t "~"{floating,tiled}
+
+# Swap the current node and the biggest window
+#super + s
+#	bspc node -s biggest.window
+
+#
+# state/flags
+#
+
+# Make window sticky
+super + equal
+  bspc node -g {sticky}
+
+# Tile window
+# super + {KP_Delete}
+  # bspc node -t {tiled}
+
+# Send the window to another edge of the screen
+# super + {_,shift + }{Left,Down,Up,Right}
+#   bspc node -{f,s} {west,south,north,east}
+
+#focus next window
+alt + Tab
+	bspc node -f {next}.local.!hidden.window
+
+# Focus last desktop
+super + Tab
+	bspc desktop -f last
+#
+# focus/swap
+#
+
+# change window direction
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# Rotate windows
+super + {r,KP_Divide}        
+  bspc node @/ -R {90,90}
+
+#
+# preselect
+#
+
+# Preselect the direction
+super + {KP_Left,KP_Begin,KP_Up,KP_Right}
+	bspc node -p {west,south,north,east}
+
+# Preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# Cancel the preselection for the focused node
+super + BackSpace
+	bspc node -p cancel
+
+# Cancel the preselection for the focused desktop
+super + ctrl + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+#
+# move/resize
+#
+
+# Expanding windows
+super + ctrl + {h,j,k,l}
+  bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# Shrinking windows
+super + alt + {l,k,j,h}
+  bspc node -z {left 20 0,bottom 0 -20,top 0 20,right -20 0}
+
+# Move a floating window
+super + ctrl + shift + {h,j,k,l}
+	bspc node -v {-20 0,0 20,0 -20,20 0}

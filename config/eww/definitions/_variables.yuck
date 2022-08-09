@@ -1,0 +1,15 @@
+(defpoll network_icon :interval "3s" "./scripts/getNetwork icon")
+(defpoll network_class :interval "3s" "./scripts/getNetwork class")
+(defpoll network_name :interval "3s" "./scripts/getNetwork name")
+
+(defpoll bat-state :interval "2s" "cat /sys/class/power_supply/BAT1/status")
+(defpoll bat-cap :interval "3s" "cat /sys/class/power_supply/BAT1/capacity")
+
+(defpoll mem-used :interval "1s" "mem-used")
+(defpoll net-download :interval "1s" "network-bandwidth")
+
+(deflisten workspace "scripts/getWorkspaces")
+
+(defpoll get-title :interval "0.5s" "scripts/getWinTitle")
+
+(defpoll get-date :interval "2s" `date "+%I:%M %p"`)

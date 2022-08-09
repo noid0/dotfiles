@@ -1,0 +1,21 @@
+#! /bin/dash
+
+print_bytes() {
+    if [ "$1" -eq 0 ] || [ "$1" -lt 1024 ]; then
+        bytes="0 kB/s"
+    elif [ "$1" -lt 1024000 ]; then
+        bytes="$(echo "$1/1024" | bc -l | LANG=C xargs printf "%.f\n") kB/s"
+    else
+        bytes="$(echo "$1/1024000" | bc -l | LANG=C xargs printf "%.1f\n") MB/s"
+    fi
+
+    echo "$bytes"
+}
+
+rx_past=$(cat /sys/class/net/wlp13s0/statistics/rx_bytes)
+sleep 1
+rx_now=$(cat /sys/class/net/wlp13s0/statistics/rx_bytes)
+
+down=$((rx_now - rx_past))
+
+print_bytes "$down"

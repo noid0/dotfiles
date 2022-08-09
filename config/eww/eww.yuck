@@ -1,0 +1,64 @@
+(include "./definitions/_variables.yuck")
+(include "./bar/bar.yuck")
+
+(defwidget left []
+  (box
+    :orientation "h"
+    :space-evenly "false"
+    :halign "start"
+    :class "left"
+    (workspaces)
+  )
+)
+
+(defwidget center []
+  (box
+    :class "center-widgets"
+    :space-evenly "false"
+    :halign "center"
+    :orientation "h"
+    (wintitle)
+  )
+)
+
+
+(defwidget right []
+  (box
+    :class "right-modules"
+    :space-evenly "false"
+    :halign "end"
+    :orientation "h"
+    (mem-used)
+    (net-download)
+    (wifi)
+    (bat)
+    (sep)
+    (datebox)
+    ; (system-tray)
+  )
+)
+
+(defwidget bar []
+  (box
+    :class "bar"
+    :orientation "h"
+    (left)
+    (center)
+    (right)
+  )
+)
+
+(defwindow bar
+  :monitor 0
+  :geometry (geometry
+    :x "0px"
+    :y "2px"
+    :width "1362px"
+    :height "39px"
+    :anchor "top center"
+  )
+  :stacking "bg"
+  :windowtype "desktop"
+  :wm-ignore false
+  (bar)
+)
