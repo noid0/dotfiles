@@ -2,8 +2,6 @@ dotfiles for my current (WIP) setup
 
 # Information
 
-<img src=assets/desktop.png align="right" width="400px">
-
    - **Distro:** [debian](https://debian.org/) (bookworm)
 
    - **Window Manager:** [bspwm](https://github.com/baskerville/bspwm)
