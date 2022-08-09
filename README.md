@@ -1,17 +1,23 @@
-dotfiles for my current setup
+dotfiles for my current (WIP) setup 
 
-still WIP
+# Information
 
-distro: debian (bookworm)
+Distro: debian (bookworm)
 
-window manager: bspwm
+Window manager: bspwm
 
-top bar: eww
+Panel: eww
 
-notification manager: dunst
+Terminal: kitty
 
-shell: fish
+Motification manager: dunst
 
-composite manager: picom-yaocccc
+App launcher: rofi
 
-gtk theme: aesthetic-night by rxyhn
+Editor: neovim / vscode
+
+Shell: fish
+
+Composite manager: picom-yaocccc
+
+Gtk theme: aesthetic-night by rxyhn
