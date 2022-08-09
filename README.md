@@ -1,3 +1,3 @@
-dotfiles for my bspwm setup
+dotfiles for my current setup
 
-still in work in progress
+still work in progress
