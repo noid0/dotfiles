@@ -1,3 +1,14 @@
+// .right-modules > * > label,
+// .right-modules > * > button {
+// padding: 0px 4px;
+// background-color: #fff;
+// }
+
+// .right-modules > box > :nth-child(-n + 2) {
+//     background: blue;
+//     // padding: 0px 1px;
+// }
+
 .bar {
     background-color: $bg;
     font-family: sans-serif;
@@ -5,62 +16,110 @@
     color: $fg;
 }
 
-.works {
-    margin-top: 9px;
-    margin-left: 7px;
-    // font-size: 11px;
+// .center {
+//     margin: 0px 280px;
+// }
 
-    .0 {
-        color: $black;
-        background-color: $bg;
-        // padding: 0px 10px 0px 10px;
-    }
-
-    .01,
-    .02,
-    .03,
-    .04,
-    .05,
-    .06 {
-        color: $fg;
-        background-color: $bg;
-        // padding: 0px 10px 0px 10px;
-    }
-
-    .011,
-    .022,
-    .033,
-    .044,
-    .055,
-    .066 {
-        color: $green;
-        background-color: $bg;
-        // padding: 0px 10px 0px 10px;
-    }
+.works > button {
+    margin: 0px 0px;
+    padding: 4px 10px;
+    // font-size: 16px;
 }
 
-.works > * {
-    //margin: 0px 10px;
-    padding: 1px 10px 3px 10px;
+.works {
+    margin-top: $margin-top-bottom;
+    margin-left: 7px;
     font-size: 16px;
+    background-color: $contrastbg;
+    border-radius: 7px;
+
+    /* NOTE: "\3" is placed before class selections which are starting with numbers just to escape vscode linter's error, removing "\3" won't affect gtk's style */
+
+    // unoccupied but not in focus
+
+    .\30 {
+        color: $black;
+        // background-color: $bg;
+        &:hover {
+            background: $hover;
+            border-radius: 7px;
+        }
+    }
+
+    // occupied but not in focus; unoccupied but in focus
+    .\30ws1,
+    .\30ws2,
+    .\30ws3,
+    .\30ws4,
+    .\30ws5,
+    .\30ws6 {
+        color: $fg;
+        // background-color: $bg;
+        &:hover {
+            background: $hover;
+            border-radius: 7px;
+        }
+    }
+
+    // occupied and focused
+    .\30ws1ws1,
+    .\30ws2ws2,
+    .\30ws3ws3,
+    .\30ws4ws4,
+    .\30ws5ws5,
+    .\30ws6ws6 {
+        color: $green;
+        // background-color: $bg;
+
+        &:hover {
+            background: $hover;
+            border-radius: 7px;
+            box-shadow: 0px 0px 0px 1.3px rgba(179, 164, 164, 0.329);
+        }
+    }
 }
 
 .wintitle {
     background-color: $contrastbg;
     color: $green;
-    margin: 7px 0;
-    padding: 0 10px;
+    margin: $margin-top-bottom 0px;
+    padding: 0px 8px;
     border-radius: 7px;
-    font-size: 13px;
+    font-size: 13.4px;
+}
+
+.right-modules {
+    box {
+        padding: 0px 4px;
+        & > label:nth-child(1) {
+            // background: white;
+            padding-right: 4px;
+        }
+        &:first-child {
+            :nth-child(1) {
+                // background-color: #fff;
+                padding-left: 8px;
+                // color: black;
+            }
+        }
+        &:last-child {
+            :nth-child(2) {
+                // background-color: #fff;
+                // color: black;
+                padding-right: 8px;
+            }
+        }
+    }
 }
 
 .mem-used--container {
     background: $contrastbg;
     border-radius: 7px 0px 0px 7px;
-    margin: 7px 0px;
+    margin: $margin-top-bottom 0px;
+    // padding-left: 8px;
     .mem-used--icon {
         font-size: 21px;
-        padding-right: 4px;
+        // padding-right: 4px;
     }
     .mem-used--text {
         font-size: 14px;
@@ -69,8 +128,8 @@
 
 .net-download--container {
     background: $contrastbg;
-    margin: 7px 0px;
-    padding: 0px 8px;
+    margin: $margin-top-bottom 0px;
+    // padding: 0px 8px;
     .net-download--icon {
         // background-image: url("assets/down-arrow.svg"),
         //     linear-gradient(
@@ -82,7 +141,7 @@
         // background-blend-mode: overlay;
         font-size: 19px;
         margin-top: -5px;
-        padding-right: 4px;
+        // padding-right: 4px;
     }
     .net-download--text {
         font-size: 14px;
@@ -90,12 +149,15 @@
 }
 
 .wifi--icon {
-    margin: 7px 0px;
+    margin: $margin-top-bottom 0px;
     background: $contrastbg;
     .network {
         font-size: 17px;
         &:hover {
-            background-color: $contrastbg;
+            // background-color: $contrastbg;
+            background: $hover;
+            padding: 0px 5px;
+            border-radius: 7px;
         }
         &:active {
             background-color: $bgSecondary;
@@ -109,28 +171,36 @@
     }
 }
 
-.bat-container {
+.bat--container {
     background: $contrastbg;
     border-radius: 0px 7px 7px 0px;
-    margin: 7px 0px;
-    padding: 0px 8px;
-    .bat-icon {
+    margin: $margin-top-bottom 0px;
+    // padding: 0px 8px;
+    .bat--icon {
         font-size: 21px;
         margin-top: -4px;
-        margin-right: 4px;
+        // margin-right: 4px;
+        // padding-right: 4px;
+        &:hover {
+            // background-color: $contrastbg;
+            background: $hover;
+            padding: 0px 5px;
+            border-radius: 7px;
+        }
     }
-
-    .bat-text {
-        // margin-left: -4px;
+    .bat--text {
         font-size: 14px;
     }
 }
 
 .date-box {
     background: $contrastbg;
-    margin: 7px 15px 7px 0;
-    padding: 0px 8px;
+    // margin: 6px 15px 7px 6px;
+    margin: $margin-top-bottom 7px;
+    // padding: 0px 8px;
     border-radius: 7px;
+    font-size: 14px;
+
     .content {
         color: $fg;
         font-size: 14px;
@@ -138,8 +208,8 @@
     }
 }
 
-.sep {
-    font-size: 16px;
-    // margin: 0px -1px;
-    margin: 0px 1px;
-}
+// .sep {
+//     font-size: 64px;
+//     // margin: 0px -1px;
+//     margin: 0px 1px;
+// }

@@ -12,4 +12,4 @@
 
 (defpoll get-title :interval "0.5s" "scripts/getWinTitle")
 
-(defpoll get-date :interval "2s" `date "+%I:%M %p"`)
+(defpoll get-date :interval "2s" `date "+%b %d  %I:%M %p"`)

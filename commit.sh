@@ -1,9 +1,12 @@
 #! /bin/bash
 
-# cd dev/dotfiles || exit 1
+# TODO: add 'git' function to input user commit message && auto commit it
+
+cd ~/dev/dotfiles || exit 1
 echo 'backup up in dotfiles.bak'
 cp ../dotfiles ../dotfiles.bak -r 2>/dev/null
 echo 'done'
+echo '----'
 
 function main() {
     echo 'bin'
@@ -12,7 +15,7 @@ function main() {
 
     echo 'config'
     rm -rf config/*
-    cd config
+    cd config || exit 1
     cp /home/ark/.config/betterlockscreenrc .
     cp /home/ark/.config/bspwm/ . -r
     cp /home/ark/.config/cava/ . -r
@@ -34,20 +37,21 @@ function main() {
     cp /home/ark/.config/sxhkd/ . -r
 
     echo 'misc'
-    cd ../misc
+    cd ../misc || exit 1
     rm -rf *
+    echo '...'
     cp /home/ark/.icons/default/ . -r
     cp /usr/share/themes/Aesthetic-Night . -r
+    echo '...'
     cp /home/ark/.local/share/icons/win-fluent/ . -r
     cp /home/ark/Pictures/wallpaper-bspwm/ . -r
 
     echo 'done'
-    exit 0
+    return
 }
 
-function git() {
-	git add --all
-	
-}
+# function git() {
+#     git add --all
+# }
 
 main

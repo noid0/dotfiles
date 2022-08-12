@@ -14,8 +14,10 @@ quiet=false
 # default theme
 loginbox=00000066
 loginshadow=00000000
-locktext="Type password to unlock..."
+#locktext="Type password to unlock..."
+locktext="Type your damn password..."
 font="sans-serif"
+#font="hack"
 ringcolor=ffffffff
 insidecolor=00000000
 separatorcolor=00000000

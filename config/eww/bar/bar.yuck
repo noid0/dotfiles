@@ -10,6 +10,18 @@
 )
 
 ; RIGHT
+
+(defwidget right-modules []
+  (box
+    :class "right-modules"
+    :space-evenly "false"
+    (mem-used)
+    (net-download)
+    (wifi)
+    (bat)
+  )
+)
+
 (defwidget mem-used []
   (box
     :class "mem-used--container"
@@ -21,6 +33,7 @@
     (label
       :class "mem-used--text"
       :text mem-used
+      ; :text `1000.10 GiB`
     )
   )
 )
@@ -37,7 +50,7 @@
     (label
       :class "net-download--text"
       :text net-download
-      ; :text "0 B/s"
+      ; :text "100 kB/s"
     )
   )
 )
@@ -59,11 +72,11 @@
 
 (defwidget bat[]
   (box
-    :class "bat-container"
+    :class "bat--container"
     :space-evenly "false"
     (label
       :halign "start"
-      :class "bat-icon"
+      :class "bat--icon"
       :text {
       bat-state == "Charging" ? "懲" :
       bat-cap <= 10 ? "鶴" :
@@ -74,10 +87,11 @@
       }
     )
     (label
-      :class "bat-text"
+      :class "bat--text"
       :halign "center"
       :space-evenly "false"
       :text "${EWW_BATTERY["BAT1"].capacity} %"
+      ; :text "100 %"
     )
   )
 )
@@ -97,3 +111,12 @@
     (label :text get-date :class "content")
   )
 )
+; (defwidget datebox []
+  ;   (label
+    ;     :text get-date
+    ;     :class "content"
+    ;     :orientation "h"
+    ;     :class "date-box"
+    ;     :space-evenly "false"
+  ;   )
+; )

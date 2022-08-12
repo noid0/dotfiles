@@ -13,7 +13,7 @@
 
 (defwidget center []
   (box
-    :class "center-widgets"
+    :class "center"
     :space-evenly "false"
     :halign "center"
     :orientation "h"
@@ -24,24 +24,26 @@
 
 (defwidget right []
   (box
-    :class "right-modules"
+    :class "right"
     :space-evenly "false"
     :halign "end"
     :orientation "h"
-    (mem-used)
-    (net-download)
-    (wifi)
-    (bat)
-    (sep)
+    ; (mem-used)
+    ; (net-download)
+    ; (wifi)
+    ; (bat)
+    ;(sep)
+    (right-modules)
     (datebox)
     ; (system-tray)
   )
 )
 
 (defwidget bar []
-  (box
+  (centerbox
     :class "bar"
     :orientation "h"
+    ; :space-evenly "false"
     (left)
     (center)
     (right)

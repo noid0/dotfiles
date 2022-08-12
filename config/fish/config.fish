@@ -14,15 +14,19 @@ alias dock-stop='sudo systemctl stop docker'
 alias icat="kitty +kitten icat"
 alias cp='cp -i'
 alias mv='mv -i'
+alias dots='cd ~/dev/dotfiles'
 
 alias v=nvim
 alias vim=nvim
-alias vi=nvim 
+alias vi=nvim
+
+
+
 
 #export TERM=xterm-256color
 
 export PATH=/home/ark/.bin:/home/ark/.deno/bin:/home/ark/.cargo/bin:/home/ark/.local/bin:/sbin:/usr/sbin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/sbin:/sbin/
 
 #filter bloat when running this for finding key names
-# xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
+#xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
 #alias kgnome='killall -3 gnome-shell'
