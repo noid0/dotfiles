@@ -4,7 +4,7 @@
 
 cd ~/dev/dotfiles || exit 1
 echo 'backup up in dotfiles.bak'
-cp ../dotfiles ../dotfiles.bak -r 2>/dev/null
+cp ../dotfiles ../dotfiles.bak -rf 2>/dev/null
 echo 'done'
 echo '----'
 
@@ -39,7 +39,6 @@ function main() {
     echo 'misc'
     cd ../misc || exit 1
     rm -rf *
-    echo '...'
     cp /home/ark/.icons/default/ . -r
     cp /usr/share/themes/Aesthetic-Night . -r
     echo '...'

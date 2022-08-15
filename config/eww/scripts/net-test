@@ -3,7 +3,7 @@
 symbol() {
   [ "$(cat /sys/class/net/wlp13s0/operstate)" = down ] && echo 隣 && exit
   #echo 林
-  echo "直"
+  echo 直
 }
 
 name() {

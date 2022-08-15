@@ -1,12 +1,21 @@
-// .right-modules > * > label,
-// .right-modules > * > button {
-// padding: 0px 4px;
-// background-color: #fff;
-// }
-
-// .right-modules > box > :nth-child(-n + 2) {
-//     background: blue;
-//     // padding: 0px 1px;
+// .test-co {
+//     // all: unset;
+//     // margin: 5px 0px;
+//     // background: $contrastbg;
+//     // border-radius: 7px;
+//     // margin-right: 20px;
+//     // font-size: 19px;
+//     background: #fff;
+//     color: #000;
+//     // .test {
+//     //     &:hover {
+//     //         background: $hover;
+//     //         border-radius: 7px;
+//     //     }
+//     //     > label {
+//     //         padding-right: 8px;
+//     //     }
+//     // }
 // }
 
 .bar {
@@ -15,10 +24,6 @@
     font-size: 12px;
     color: $fg;
 }
-
-// .center {
-//     margin: 0px 280px;
-// }
 
 .works > button {
     margin: 0px 0px;
@@ -92,21 +97,16 @@
     box {
         padding: 0px 4px;
         & > label:nth-child(1) {
-            // background: white;
-            padding-right: 4px;
+            padding-right: 5px;
         }
         &:first-child {
             :nth-child(1) {
-                // background-color: #fff;
-                padding-left: 8px;
-                // color: black;
+                padding-left: 7px;
             }
         }
         &:last-child {
             :nth-child(2) {
-                // background-color: #fff;
-                // color: black;
-                padding-right: 8px;
+                padding-right: 7px;
             }
         }
     }
@@ -116,10 +116,9 @@
     background: $contrastbg;
     border-radius: 7px 0px 0px 7px;
     margin: $margin-top-bottom 0px;
-    // padding-left: 8px;
     .mem-used--icon {
         font-size: 21px;
-        // padding-right: 4px;
+        margin-top: -1px;
     }
     .mem-used--text {
         font-size: 14px;
@@ -129,35 +128,33 @@
 .net-download--container {
     background: $contrastbg;
     margin: $margin-top-bottom 0px;
-    // padding: 0px 8px;
     .net-download--icon {
-        // background-image: url("assets/down-arrow.svg"),
-        //     linear-gradient(
-        //         rgba(182, 190, 202, 0.1) /*, rgba(111, 224, 18, 0.616)*/
-        //     );
-        // background-repeat: no-repeat;
-        // background-position: 0px 4px;
-        // padding: 0px 9px;
-        // background-blend-mode: overlay;
+        font-family: "Hack nerd font";
         font-size: 19px;
-        margin-top: -5px;
-        // padding-right: 4px;
     }
     .net-download--text {
         font-size: 14px;
     }
 }
 
-.wifi--icon {
+// styling "eventbox" ain't easy ;-;
+.wifi-icon--container {
     margin: $margin-top-bottom 0px;
     background: $contrastbg;
     .network {
-        font-size: 17px;
+        font-size: 18px;
+        & > label {
+            padding-right: 2px;
+            margin-top: -2px;
+            margin-left: -2px;
+            margin-right: -2px;
+        }
         &:hover {
-            // background-color: $contrastbg;
             background: $hover;
-            padding: 0px 5px;
             border-radius: 7px;
+            & > label {
+                padding: 0px 8px 0px 6px;
+            }
         }
         &:active {
             background-color: $bgSecondary;
@@ -166,7 +163,8 @@
             color: $red;
         }
         &.connected {
-            color: $green;
+            // color: $green;
+            color: $fg;
         }
     }
 }
@@ -175,14 +173,10 @@
     background: $contrastbg;
     border-radius: 0px 7px 7px 0px;
     margin: $margin-top-bottom 0px;
-    // padding: 0px 8px;
     .bat--icon {
         font-size: 21px;
         margin-top: -4px;
-        // margin-right: 4px;
-        // padding-right: 4px;
         &:hover {
-            // background-color: $contrastbg;
             background: $hover;
             padding: 0px 5px;
             border-radius: 7px;
@@ -197,7 +191,7 @@
     background: $contrastbg;
     // margin: 6px 15px 7px 6px;
     margin: $margin-top-bottom 7px;
-    // padding: 0px 8px;
+    padding: 0px 8px;
     border-radius: 7px;
     font-size: 14px;
 

@@ -22,13 +22,40 @@
   )
 )
 
+; (defwidget test[]
+  ;   (box
+    ;     :class "test-co"
+    ;     (eventbox
+      ;       :class "test"
+      ;       :cursor "pointer"
+      ;       :onclick "kitty -T network -e nmtui"
+      ;       :width "30"
+      ;       ""
+    ;     )
+  ;   )
+; )
+
+(defwidget test []
+  (box :class "test-co"
+    (eventbox
+      :cursor "pointer"
+      :class "test"
+      :onclick "kitty -T network -e nmtui"
+      ; network_icon
+      "直"
+    )
+  )
+)
+
+
+
 (defwidget mem-used []
   (box
     :class "mem-used--container"
     :space-evenly "false"
     (label
       :class "mem-used--icon"
-      :text ""
+      :text ""
     )
     (label
       :class "mem-used--text"
@@ -45,7 +72,7 @@
     :space-evenly "false"
     (label
       :class "net-download--icon"
-      :text ""
+      :text ""
     )
     (label
       :class "net-download--text"
@@ -55,12 +82,12 @@
   )
 )
 
-
 (defwidget wifi []
-  (box :class "wifi--icon"
+  (box :class "wifi-icon--container"
     :orientation "h"
     :space-evenly "false"
-    (button
+    (eventbox
+      :cursor "pointer"
       :class "network ${network_class}"
       :tooltip "${network_name} (Press to open nmtui)"
       :onclick "kitty -T network -e nmtui"
@@ -68,7 +95,6 @@
     )
   )
 )
-
 
 (defwidget bat[]
   (box
@@ -111,12 +137,3 @@
     (label :text get-date :class "content")
   )
 )
-; (defwidget datebox []
-  ;   (label
-    ;     :text get-date
-    ;     :class "content"
-    ;     :orientation "h"
-    ;     :class "date-box"
-    ;     :space-evenly "false"
-  ;   )
-; )

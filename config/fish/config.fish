@@ -30,3 +30,7 @@ export PATH=/home/ark/.bin:/home/ark/.deno/bin:/home/ark/.cargo/bin:/home/ark/.l
 #filter bloat when running this for finding key names
 #xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
 #alias kgnome='killall -3 gnome-shell'
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH

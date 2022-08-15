@@ -106,7 +106,7 @@ super + {q,Delete}
 
 # Alternate between the tiled and monocle layout
 super + space
-  bspc node -t "~"{floating,tiled}
+  bspc node -t "~"floating
 
 # Swap the current node and the biggest window
 #super + s
