@@ -1,4 +1,10 @@
-rofi app menu
+1. add deplot.sh script to quickly install necessary packages and depoly dotfiles over a clean deb-insatll
+
+
+
+
+
+
 https://github.com/phocus/ 
 	\ gtk repo for debugging stuff
 	\ gtk theme debugging + nice gtk 3 theme (gtk 2, 4 not available :C )

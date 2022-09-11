@@ -130,7 +130,8 @@
     margin: $margin-top-bottom 0px;
     .net-download--icon {
         font-family: "Hack nerd font";
-        font-size: 19px;
+        font-size: 18px;
+        margin-top: -1px;
     }
     .net-download--text {
         font-size: 14px;
@@ -139,15 +140,14 @@
 
 // styling "eventbox" ain't easy ;-;
 .wifi-icon--container {
-    margin: $margin-top-bottom 0px;
+    margin: 7px 0px;
     background: $contrastbg;
     .network {
         font-size: 18px;
         & > label {
-            padding-right: 2px;
-            margin-top: -2px;
-            margin-left: -2px;
+            padding-right: 1px;
             margin-right: -2px;
+            margin-bottom: -1px;
         }
         &:hover {
             background: $hover;

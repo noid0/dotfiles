@@ -1,7 +1,7 @@
 #! /bin/bash
 
 #restore wallpaper
-feh --no-fehbg --bg-fill --randomize "$HOME/Pictures/wallpaper-bspwm/"
+feh --no-fehbg --bg-fill --randomize "$HOME/media/pics/wallpaper-bspwm/"
 
 #keyboard daemon
 pgrep -x sxhkd > /dev/null || DISPLAY=:0 sxhkd || DISPLAY=:1 sxhkd || /usr/bin/sxhkd & 
@@ -31,7 +31,7 @@ eval "$HOME"/.config/bspwm/autostart.sh &
 
 #start copyq and flameshot
 copyq --start-server & 
-# flameshot & 
+flameshot & 
 
 #touchegg & 
 

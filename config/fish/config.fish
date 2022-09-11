@@ -1,27 +1,35 @@
+# general
 alias c='clear -T xterm'
 alias g=exit
 alias ls='lsd --classify'
-alias todo='nvim /home/ark/toDo'
-alias tui='taskwarrior-tui'
-alias speedtest='speedtest --no-upload --bytes --secure --single'
-alias code=codium
-alias bsprt="/home/ark/.config/bspwm/./bspwmrc"
-alias reboot='systemctl reboot'
-alias shutdown='shutdown now'
-alias logout='sudo pkill -KILL -u ark'
-alias dock="docker"
-alias dock-stop='sudo systemctl stop docker'
-alias icat="kitty +kitten icat"
 alias cp='cp -i'
 alias mv='mv -i'
-alias dots='cd ~/dev/dotfiles'
+alias reboot='systemctl reboot'
+alias logout='sudo pkill -KILL -u ark'
+alias shutdown='shutdown now'
+alias icat="kitty +kitten icat"
+alias dock-stop='sudo systemctl stop docker'
 
+# dirs
+alias bsprt="/home/ark/.config/bspwm/./bspwmrc"
+alias dots='cd ~/dev/dotfiles'
+alias todo='nvim /home/ark/toDo.txt'
+alias dev='cd /home/ark/dev/'
+
+# vim
 alias v=nvim
 alias vim=nvim
 alias vi=nvim
 
-
-
+# apps
+alias pdf='zathura'
+alias zath='zathura'
+alias code=codium
+alias tui='taskwarrior-tui'
+alias speedtest='speedtest --no-upload --bytes --secure --single'
+alias dock="docker"
+alias cal=calcurse
+alias calendar=calcurse
 
 #export TERM=xterm-256color
 

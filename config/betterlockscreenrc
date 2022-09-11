@@ -1,7 +1,7 @@
 # default options
 display_on=0
 span_image=false
-lock_timeout=300
+lock_timeout=60
 fx_list=(dim blur dimblur pixel dimpixel color)
 dim_level=40
 blur_level=1
@@ -15,7 +15,7 @@ quiet=false
 loginbox=00000066
 loginshadow=00000000
 #locktext="Type password to unlock..."
-locktext="Type your damn password..."
+locktext="Type yo damn passwd..."
 font="sans-serif"
 #font="hack"
 ringcolor=ffffffff

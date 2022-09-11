@@ -120,6 +120,7 @@ video/flv=vlc.desktop
 video/x-flc=vlc.desktop
 video/x-fli=vlc.desktop
 video/x-flv=vlc.desktop
+application/pdf=org.pwmt.zathura.desktop
 
 [Added Associations]
 inode/directory=rhythmbox.desktop;

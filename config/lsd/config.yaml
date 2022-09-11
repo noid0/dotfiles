@@ -96,7 +96,7 @@ size: default
 # == Permission ==
 # Specify the format of the permission column
 # Possible value: rwx, octal
-#permission: rwx
+permission: rwx
 
 # == Sorting ==
 sorting:
@@ -133,4 +133,4 @@ symlink-arrow: ⇒
 # == Header ==
 # Whether to display block headers.
 # Possible values: false, true
-#header: false
+header: false

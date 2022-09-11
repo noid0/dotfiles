@@ -43,7 +43,7 @@ function main() {
     cp /usr/share/themes/Aesthetic-Night . -r
     echo '...'
     cp /home/ark/.local/share/icons/win-fluent/ . -r
-    cp /home/ark/Pictures/wallpaper-bspwm/ . -r
+    cp /home/ark/media/pics/wallpaper-bspwm/ . -r
 
     echo 'done'
     return

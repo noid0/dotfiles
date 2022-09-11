@@ -1,8 +1,9 @@
 #!/bin/bash
 
 symbol() {
-  [ "$(cat /sys/class/net/wlp13s0/operstate)" = down ] && echo 隣 && exit
+  #  [ "$(cat /sys/class/net/wlp13s0/operstate)" = down ] && echo 隣 && exit
   #echo 林
+  [ "$(cat /sys/class/net/wlp13s0/operstate)" = dormant ] && echo 磌 && exit
   echo "直"
 }
 

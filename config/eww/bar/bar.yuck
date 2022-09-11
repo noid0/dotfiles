@@ -22,32 +22,20 @@
   )
 )
 
-; (defwidget test[]
-  ;   (box
-    ;     :class "test-co"
-    ;     (eventbox
-      ;       :class "test"
-      ;       :cursor "pointer"
-      ;       :onclick "kitty -T network -e nmtui"
-      ;       :width "30"
-      ;       ""
-    ;     )
-  ;   )
-; )
-
-(defwidget test []
-  (box :class "test-co"
+(defwidget wifi []
+  (box :class "wifi-icon--container"
+    :orientation "h"
+    :space-evenly "false"
     (eventbox
       :cursor "pointer"
-      :class "test"
-      :onclick "kitty -T network -e nmtui"
-      ; network_icon
-      "直"
+      :class "network ${network_class}"
+      :tooltip "${network_name} (Press to open nmtui)"
+      ;:onclick "kitty -T network -e nmtui"
+      :onclick "st -T network -e nmtui"
+      network_icon
     )
   )
 )
-
-
 
 (defwidget mem-used []
   (box
@@ -56,6 +44,7 @@
     (label
       :class "mem-used--icon"
       :text ""
+      ; :text "着"
     )
     (label
       :class "mem-used--text"
@@ -65,14 +54,15 @@
   )
 )
 
-
 (defwidget net-download []
   (box
     :class "net-download--container"
     :space-evenly "false"
     (label
       :class "net-download--icon"
-      :text ""
+      ; :text ""
+      ; :text ""
+      :text ""
     )
     (label
       :class "net-download--text"
@@ -82,19 +72,6 @@
   )
 )
 
-(defwidget wifi []
-  (box :class "wifi-icon--container"
-    :orientation "h"
-    :space-evenly "false"
-    (eventbox
-      :cursor "pointer"
-      :class "network ${network_class}"
-      :tooltip "${network_name} (Press to open nmtui)"
-      :onclick "kitty -T network -e nmtui"
-      network_icon
-    )
-  )
-)
 
 (defwidget bat[]
   (box
@@ -115,7 +92,7 @@
     (label
       :class "bat--text"
       :halign "center"
-      :space-evenly "false"
+      ; :space-evenly "false"
       :text "${EWW_BATTERY["BAT1"].capacity} %"
       ; :text "100 %"
     )
