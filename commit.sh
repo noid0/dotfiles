@@ -4,7 +4,7 @@
 
 cd ~/dev/dotfiles || exit 1
 echo 'backup up in dotfiles.bak'
-cp ../dotfiles ../dotfiles.bak -rf 2>/dev/null
+cp ../dotfiles ../.dotfiles.bak -rf 2>/dev/null
 echo 'done'
 echo '----'
 
