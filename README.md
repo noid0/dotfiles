@@ -8,7 +8,7 @@ dotfiles for my current (always WIP) setup
 
    - **Panel:** [eww](https://github.com/elkowar/eww)
 
-   - **Terminal:** [kitty](https://github.com/kovidgoyal/kitty)
+   - **Terminal:** [st](https://st.suckless.org/)
 
    - **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
 
