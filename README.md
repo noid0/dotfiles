@@ -1,4 +1,4 @@
-dotfiles for my current (WIP) setup 
+dotfiles for my current (always WIP) setup 
 
 # Information
 
