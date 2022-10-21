@@ -1,7 +1,7 @@
 [Default Applications]
-text/html=google-chrome.desktop
-x-scheme-handler/http=google-chrome.desktop
-x-scheme-handler/https=google-chrome.desktop
+text/html=firefox-esr.desktop
+x-scheme-handler/http=firefox-esr.desktop
+x-scheme-handler/https=firefox-esr.desktop
 x-scheme-handler/about=google-chrome.desktop
 x-scheme-handler/unknown=google-chrome.desktop
 inode/directory=nemo.desktop
@@ -121,6 +121,14 @@ video/x-flc=vlc.desktop
 video/x-fli=vlc.desktop
 video/x-flv=vlc.desktop
 application/pdf=org.pwmt.zathura.desktop
+x-scheme-handler/msteams=teams.desktop
+x-scheme-handler/chrome=firefox-esr.desktop
+application/x-extension-htm=firefox-esr.desktop
+application/x-extension-html=firefox-esr.desktop
+application/x-extension-shtml=firefox-esr.desktop
+application/xhtml+xml=firefox-esr.desktop
+application/x-extension-xhtml=firefox-esr.desktop
+application/x-extension-xht=firefox-esr.desktop
 
 [Added Associations]
 inode/directory=rhythmbox.desktop;
@@ -241,3 +249,13 @@ video/x-fli=vlc.desktop;
 video/x-flv=vlc.desktop;
 image/jpeg=google-chrome.desktop;
 application/pdf=google-chrome.desktop;
+x-scheme-handler/http=firefox-esr.desktop;
+x-scheme-handler/https=firefox-esr.desktop;
+x-scheme-handler/chrome=firefox-esr.desktop;
+text/html=firefox-esr.desktop;
+application/x-extension-htm=firefox-esr.desktop;
+application/x-extension-html=firefox-esr.desktop;
+application/x-extension-shtml=firefox-esr.desktop;
+application/xhtml+xml=firefox-esr.desktop;
+application/x-extension-xhtml=firefox-esr.desktop;
+application/x-extension-xht=firefox-esr.desktop;

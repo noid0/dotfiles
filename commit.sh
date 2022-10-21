@@ -2,9 +2,9 @@
 
 # TODO: add 'git' function to input user commit message && auto commit it
 
-cd ~/dev/dotfiles || exit 1
+cd ~/dev/dots || exit 1
 echo 'backup up in dotfiles.bak'
-cp ../dotfiles ../.dotfiles.bak -rf 2>/dev/null
+cp ../dots ../.dotfiles.bak -rf 2>/dev/null
 echo 'done'
 echo '----'
 
@@ -34,6 +34,7 @@ function main() {
     cp /home/ark/.config/ranger/ . -r
     cp /home/ark/.config/rofi . -r
     cp /home/ark/.config/screenkey.json . -r
+    cp /home/ark/.config/starship/ . -r
     cp /home/ark/.config/sxhkd/ . -r
 
     echo 'misc'

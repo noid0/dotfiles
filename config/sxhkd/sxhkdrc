@@ -1,15 +1,9 @@
+# Expand/contract a window by moving one of its side outward/inward
 #super + s : {h,j,k,l}
-#super + s : {s : h,j,k,l , e : h,j,k,l}
-#    {bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}, bspc node -z {left 20 0,bottom 0 -20,top 0 20,right -20 0}}
-
+#    STEP=20; SELECTION={1,2,3,4}; \
 #    bspc node -z $(echo "left -$STEP 0,bottom 0 $STEP,top 0 -$STEP,right $STEP 0" | cut -d',' -f$SELECTION) || \
 #    bspc node -z $(echo "right -$STEP 0,top 0 $STEP,bottom 0 -$STEP,left $STEP 0" | cut -d',' -f$SELECTION)
 
-#super + ctrl + {h,j,k,l}
-#  bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
-
-#super + alt + {l,k,j,h}
-#  bspc node -z {left 20 0,bottom 0 -20,top 0 20,right -20 0}
 
 
 # get keynames with 
@@ -21,10 +15,6 @@
 # wm independent hotkeys
 #
 
-# windows nt 7/8/10 "select cursor" feature (it's here just for fun)
-super + x
-  slop --nodecorations --highlight --tolerance=0 --color=0.3,0.4,0.6,0.6 -f ""
-
 # reload sxhkd config
 super + Escape
   pkill -USR1 -x sxhkd && dunstify --replace=69 -i keyboard "Restarted SXHKD"
@@ -35,6 +25,13 @@ super + Return
   st
 super + shift + Return
   kitty
+super + ctrl + shift + Return
+  alacritty
+
+# draw floating terminal
+super + x
+  draw-terminal
+  #slop --nodecorations --highlight --tolerance=0 --color=0.3,0.4,0.6,0.6 -f ""
 
 # Launch Menus
 super + m
@@ -55,9 +52,11 @@ super + l
 
 # launch chrome
 super + w
-  notify-send 'launching chrome'; google-chrome 
+  notify-send 'launching firefox'; firefox
 super + shift + w
-  notify-send 'launching chrome-incognito'; google-chrome --incognito
+  notify-send 'launching firefox-private'; firefox --private-window
+super + ctrl + w
+  notify-send 'chrome? okey...'; google-chrome
 
 # Randomize wallpaper
 # super + shift + w
