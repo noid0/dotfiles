@@ -13,7 +13,7 @@ disabled = false
 
 [username]
 show_always = true
-style_user = "white bold"
+style_user = "green bold"
 style_root = "red bold"
 format = "[$user: ]($style)"
 disabled = false
@@ -22,10 +22,10 @@ disabled = false
 success_symbol = "[❯](bold blue)"
 error_symbol = "[❯](bold red)"
 # vi stuff
-vicmd_symbol = "[❯](bold green)"
-vimcmd_visual_symbol = "[❯](bold purple)"
-vimcmd_replace_symbol = "[❯](bold purple)"
-vimcmd_replace_one_symbol = "[❯](bold purple)"
+vicmd_symbol = "[❮](bold yellow)"
+vimcmd_visual_symbol = "[❮](bold purple)"
+vimcmd_replace_symbol = "[❮](bold purple)"
+vimcmd_replace_one_symbol = "[❮](bold purple)"
 
 
 [directory]

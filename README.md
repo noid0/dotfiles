@@ -1,4 +1,4 @@
-dotfiles for my current (always WIP) setup 
+some desktop configs...
 
 # Information
 

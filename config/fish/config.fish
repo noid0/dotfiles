@@ -1,22 +1,29 @@
-#export TERM=xterm-256color
-export PATH=/opt/gradle/gradle-7.5.1/bin:/home/ark/.bun/bin:/home/ark/.bin:/home/ark/.deno/bin:/home/ark/.cargo/bin:/home/ark/.local/bin:/sbin:/usr/sbin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/sbin:/sbin/
+# Directories
+export PATH=/opt/gradle/gradle-7.5.1/bin:/home/ark/.bun/bin:/home/ark/.bin:/home/ark/.deno/bin:/home/ark/.cargo/bin:/home/ark/.local/bin:/sbin:/usr/sbin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/sbin:/sbin/:/usr/local/go/bin
+# Starship
+starship init fish | source
+export STARSHIP_CONFIG=/home/ark/.config/starship/starship.toml
 
-# general
+# Bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+
+# General
 alias c='clear -T xterm'
 alias g=exit
 alias gg=exit
 alias ls='lsd --classify'
 alias cp='cp -i'
 alias mv='mv -i'
+alias ds='disown'
+
 alias reboot='systemctl reboot'
 alias logout='sudo pkill -KILL -u ark'
 alias shutdown='shutdown now'
-alias icat="kitty +kitten icat"
 alias dock-stop='sudo systemctl stop docker'
-alias ds='disown'
 alias connect="nmcli dev wifi con 'init' password '0penb$D12.1?'"
+alias icat="kitty +kitten icat"
 alias tsu='sudo fish'
-alias ff='firefox'
 
 # dirs
 alias bsprt="/home/ark/.config/bspwm/./bspwmrc"
@@ -30,6 +37,7 @@ alias view='viewnior'
 alias v=nvim
 alias vim=nvim
 alias vi=nvim
+alias lv=lvim
 
 # apps
 alias pdf='zathura'
@@ -40,6 +48,7 @@ alias speedtest='speedtest --no-upload --bytes --secure --single'
 alias dock="docker"
 alias cal=calcurse
 alias calendar=calcurse
+alias ff='firefox'
 
 # utility aliases
 alias randpasswd='tr -dc "a-zA-Z0-9_#@.-" < /dev/urandom | head -c 30'
@@ -47,10 +56,4 @@ alias randpasswd='tr -dc "a-zA-Z0-9_#@.-" < /dev/urandom | head -c 30'
 #filter bloat when running this for finding key names
 #xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
 
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
 
-# starship
-starship init fish | source
-export STARSHIP_CONFIG=/home/ark/.config/starship/starship.toml
