@@ -27,7 +27,7 @@ alias tsu='sudo fish'
 
 # dirs
 alias bsprt="/home/ark/.config/bspwm/./bspwmrc"
-alias dots='cd ~/dev/dotfiles'
+alias dots='cd ~/dev/dots/'
 alias todo='nvim /home/ark/toDo.txt'
 alias dev='cd /home/ark/dev/'
 alias trash='cd /home/ark/.local/share/Trash/rand/'

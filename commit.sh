@@ -22,10 +22,10 @@ function main() {
     cp /home/ark/.config/dunst . -r
     cp /home/ark/.config/eww . -r
     cp /home/ark/.config/fish/ . -r
-    cp /home/ark/.config/gtk-2.0 . -r
-    cp /home/ark/.config/gtk-3.0 . -r
-    cp /home/ark/.config/gtk-4.0 . -r
-    cp /home/ark/.config/kitty/ . -r
+#    cp /home/ark/.config/gtk-2.0 . -r
+#    cp /home/ark/.config/gtk-3.0 . -r
+#    cp /home/ark/.config/gtk-4.0 . -r
+#    cp /home/ark/.config/kitty/ . -r
     cp /home/ark/.config/lsd/ . -r
     cp /home/ark/.config/mimeapps.list . -r
     cp /home/ark/.config/networkmanager-dmenu/ . -r
@@ -37,14 +37,14 @@ function main() {
     cp /home/ark/.config/starship/ . -r
     cp /home/ark/.config/sxhkd/ . -r
 
-    echo 'misc'
-    cd ../misc || exit 1
-    rm -rf *
-    cp /home/ark/.icons/default/ . -r
-    cp /usr/share/themes/Aesthetic-Night . -r
-    echo '...'
-    cp /home/ark/.local/share/icons/win-fluent/ . -r
-    cp /home/ark/media/pics/wallpaper-bspwm/ . -r
+#    echo 'misc'
+#    cd ../misc || exit 1
+#    rm -rf *
+#    cp /home/ark/.icons/default/ . -r
+#    cp /usr/share/themes/Aesthetic-Night . -r
+#    echo '...'
+#    cp /home/ark/.local/share/icons/win-fluent/ . -r
+#    cp /home/ark/media/pics/wallpaper-bspwm/ . -r
 
     echo 'done'
     return
