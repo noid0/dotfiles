@@ -10,10 +10,6 @@ some desktop configs...
 
    - **Terminal:** [st](https://st.suckless.org/)
 
-   - **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
-
    - **Editor:** [neovim](https://github.com/neovim/neovim) / [vscodium](https://github.com/VSCodium/vscodium/)
 
    - **Composite manager:** [picom-yaocccc](https://github.com/yaocccc/picom/)
-
-   - **Notification Daemon:** [dunst](https://github.com/dunst-project/dunst)
